@@ -16,6 +16,7 @@ The output JSON file (`models.json`) contains an array of model objects, each wi
 ### Example
 
 ```json
+[
     {
         "name": "gemma3",
         "description": "The current, most capable model that runs on a single GPU.",
@@ -29,37 +30,7 @@ The output JSON file (`models.json`) contains an array of model objects, each wi
             "vision"
         ]
     },
-    {
-        "name": "qwen3",
-        "description": "Qwen3 is the latest generation of large language models in Qwen series, offering a comprehensive suite of dense and mixture-of-experts (MoE) models.",
-        "tags": [
-            "0.6b",
-            "1.7b",
-            "4b",
-            "8b",
-            "14b",
-            "30b",
-            "32b",
-            "235b"
-        ],
-        "extras": [
-            "tools"
-        ]
-    },
-    {
-        "name": "deepseek-r1",
-        "description": "DeepSeek's first-generation of reasoning models with comparable performance to OpenAI-o1, including six dense models distilled from DeepSeek-R1 based on Llama and Qwen.",
-        "tags": [
-            "1.5b",
-            "7b",
-            "8b",
-            "14b",
-            "32b",
-            "70b",
-            "671b"
-        ],
-        "extras": []
-    },
+]
 ```
 
 
