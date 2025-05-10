@@ -40,3 +40,6 @@ A GitHub Actions workflow (`.github/workflows/deploy_models.yml`) orchestrates t
 4.  **Deployment to GitHub Pages**: The workflow uploads the generated `models.json` as an artifact and deploys it to GitHub Pages, making it publicly accessible via the link mentioned above.
 
 The script can also be run locally for development and testing, and it will attempt to use a local `ollama.com_library.html` file if the direct download fails.
+
+
+>~ ⋖,^><
