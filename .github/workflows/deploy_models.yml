@@ -1,0 +1,48 @@
+name: Update and Deploy Models JSON
+
+on:
+  push:
+    branches:
+      - main # Or your default branch name (e.g., master)
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual triggering
+
+permissions:
+  contents: read # Allow checkout
+  pages: write # Allow GHA to deploy to Pages
+  id-token: write # Allow GHA to get OIDC token for Pages deployment
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    # The environment section can be added back if you have a specific environment named 'github-pages' in your repo settings.
+    # environment:
+    #   name: github-pages
+    #   url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run parser script
+        run: python3 parse.py
+
+      - name: Upload artifact for GitHub Pages deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the root directory which contains models.json
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
