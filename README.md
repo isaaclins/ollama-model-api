@@ -17,23 +17,14 @@ The output JSON file (`models.json`) contains an array of model objects, each wi
 
 ```json
 [
-    {
-        "name": "gemma3",
-        "description": "The current, most capable model that runs on a single GPU.",
-        "tags": [
-            "1b",
-            "4b",
-            "12b",
-            "27b"
-        ],
-        "extras": [
-            "vision"
-        ]
-    },
+  {
+    "name": "gemma3",
+    "description": "The current, most capable model that runs on a single GPU.",
+    "tags": ["1b", "4b", "12b", "27b"],
+    "extras": ["vision"]
+  }
 ]
 ```
-
-
 
 ## How it works
 
