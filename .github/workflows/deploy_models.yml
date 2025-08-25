@@ -38,7 +38,7 @@ jobs:
         run: python3 parse.py
 
       - name: Upload artifact for GitHub Pages deployment
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload the root directory which contains models.json
           path: "."
